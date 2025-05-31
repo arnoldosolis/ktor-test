@@ -26,10 +26,11 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
     implementation(libs.ktor.server.config.yaml)
+    implementation("com.mchange:c3p0:0.9.5.5")
     implementation("org.liquibase:liquibase-core:4.27.0")
     liquibaseRuntime(libs.postgresql)
     liquibaseRuntime("org.liquibase:liquibase-core:4.27.0")
-    liquibaseRuntime("info.picocli:picocli:4.7.5") // ✅ Required to avoid NoClassDefFoundError
+    liquibaseRuntime("info.picocli:picocli:4.7.5") // Required to avoid NoClassDefFoundError
     implementation("org.quartz-scheduler:quartz:2.5.0")
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
